@@ -9,5 +9,5 @@ before_script:
   - cp ruleset.xml.dist ruleset.xml
 
 script:
-  - php vendor/bin/phpunit
+  #- php vendor/bin/phpunit
   - php vendor/bin/phpcs --standard=ruleset.xml src/
