@@ -1,6 +1,8 @@
 Resty-Doctrine
 ==============
 
+[![Build Status](https://travis-ci.org/mostofreddy/resty-doctrine.svg?branch=development)](https://travis-ci.org/mostofreddy/resty-doctrine)
+
 Service provider para integrar Doctrine y DBAL en proyectos basados en [Resty](https://github.com/mostofreddy/resty)
 
 Versión estable
