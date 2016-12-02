@@ -13,12 +13,6 @@
             "homepage": "http://www.mostofreddy.com.ar"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url" : "../resty"
-        }
-    ],
     "require": {
         "php": ">=7.0.0",
         "doctrine/dbal": "v2.5.*",

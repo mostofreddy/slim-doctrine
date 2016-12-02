@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9b594751f126d587089a7cac856df550",
-    "content-hash": "aa4e641af9256f63d055bdfc6171f650",
+    "hash": "1145b8138703f685b28152c49635b05d",
+    "content-hash": "04c42171de903e8803a81232b7fee0b6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1640,8 +1640,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "../resty",
-                "reference": "07de22119f9c9c460885985f0c186872188bc30e"
+                "url": "https://github.com/mostofreddy/resty.git",
+                "reference": "cbe195f4b1dc230d83dc1fc952c966dc06ac8e04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mostofreddy/resty/zipball/cbe195f4b1dc230d83dc1fc952c966dc06ac8e04",
+                "reference": "cbe195f4b1dc230d83dc1fc952c966dc06ac8e04",
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
@@ -1668,6 +1674,7 @@
                     "Resty\\Test\\": "tests/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1686,7 +1693,7 @@
                 "rest",
                 "slim"
             ],
-            "time": "2016-11-24 20:47:54"
+            "time": "2016-11-24 20:36:22"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
