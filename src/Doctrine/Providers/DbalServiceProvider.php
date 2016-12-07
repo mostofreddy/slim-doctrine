@@ -35,12 +35,6 @@ class DbalServiceProvider implements ServiceProviderInterface
 {
     const ERROR_CONFIG_NOT_FOUND = "DBAlonfig: No found";
     const DEFAULT_CONFIG = [
-        'driver'   => 'pdo_mysql',
-        'user'     => 'root',
-        'password' => '',
-        'dbname'   => '',
-        'host'   => 'localhost',
-        'port'   => 3306,
         'debug' => true
     ];
     /**
