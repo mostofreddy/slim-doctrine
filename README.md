@@ -3,7 +3,7 @@ Resty-Doctrine
 
 [![Build Status](https://travis-ci.org/mostofreddy/slim-doctrine.svg)](https://travis-ci.org/mostofreddy/slim-doctrine)
 
-Service provider para integrar Doctrine y DBAL en proyectos basados en Slim 3
+Service provider para integrar Doctrine y DBAL en proyectos basados en Slim 3.
 
 Versión estable
 ---------------
