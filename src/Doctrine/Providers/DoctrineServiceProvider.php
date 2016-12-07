@@ -16,12 +16,12 @@
  */
 namespace Resty\Doctrine\Providers;
 // Resty
-use Resty\Api;
-use Resty\Interfaces\ServiceProviderInterface;
+use Resty\AbstractServiceProvider;
 // Doctrine
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
-
+// Slim
+use Slim\Container;
 /**
  * DoctrineServiceProvider
  *
@@ -30,54 +30,63 @@ use Doctrine\ORM\EntityManager;
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
- * @link      http://www.mostofreddy.com.ar
+ * @link      http://www.mostofreddy.com.ar}
+ * 
+ * @codeCoverageIgnore
  */
-class DoctrineServiceProvider implements ServiceProviderInterface
+class DoctrineServiceProvider extends AbstractServiceProvider
 {
     const ERROR_CONFIG_NOT_FOUND = "Doctrine config: No found";
-    const DEFAULT_CONFIG = [
+    const DEFAULT_CONNECTION = [
         'driver'   => 'pdo_mysql',
         'user'     => 'root',
-        'password' => '',
-        'dbname'   => '',
+        'password' => 'root',
+        'dbname'   => 'mydb',
         'host'   => 'localhost',
-        'port'   => 3306,
-        'isDevMode' => true,
-        'entitiesFiles' => ''
+        'port'   => 3306
+    ];
+    const DEFAULT_META = [
+        'paths' => [],
+        'isDevMode' => false,
+        'proxyDir' => null,
+        'cache' => null,
+        'useSimpleAnnotationReader' => true
     ];
     /**
      * Registra el servicio
      *
-     * @param Api $app Instancia de la aplicacion
+     * @param Container $container Instancia de la aplicacion
      *
      * @return void
      */
-    public static function register(Api $app)
+    public static function register(Container $container)
     {
-        $container = $app->getContainer();
-
         $container['em'] = function ($container) {
 
             if (!isset($container['doctrine'])) {
                 throw new \Exception(static::ERROR_CONFIG_NOT_FOUND);
             }
 
-            $connectionParams = $container['doctrine'] + static::DEFAULT_CONFIG;
+            if (isset($container['doctrine']['meta'])) {
+                $meta = $container['doctrine']['meta'] + static::DEFAULT_META;
+            } else {
+                $meta = static::DEFAULT_META;
+            }
 
-            // the connection configuration
-            $dbParams = [
-                'driver'   => $connectionParams['driver'],
-                'user'     => $connectionParams['user'],
-                'password' => $connectionParams['password'],
-                'dbname'   => $connectionParams['dbname'],
-                'host'   => $connectionParams['host'],
-            ];
+            if (isset($container['doctrine']['connection'])) {
+                $connection = $container['doctrine']['connection'];
+            } else {
+                $connection = static::DEFAULT_CONNECTION;
+            }
 
             $config = Setup::createAnnotationMetadataConfiguration(
-                $connectionParams['entitiesFiles'],
-                $connectionParams['isDevMode']
+                $meta['paths'],
+                $meta['isDevMode'],
+                $meta['proxyDir'],
+                $meta['cache'],
+                $meta['useSimpleAnnotationReader']
             );
-            return EntityManager::create($dbParams, $config);
+            return EntityManager::create($connection, $config);
         };
     }
 }

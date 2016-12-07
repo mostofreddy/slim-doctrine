@@ -64,6 +64,7 @@ class EntityTest extends \PHPUnit_Framework_TestCase
      * Metodo que testea la transformación de la entidad a array
      *
      * @depends testCreateEntity
+     * 
      * @return void
      */
     public function testToArray()
@@ -78,6 +79,7 @@ class EntityTest extends \PHPUnit_Framework_TestCase
      * Metodo que testea la transformación de la entidad a array
      *
      * @depends testCreateEntity
+     * 
      * @return void
      */
     public function testToJson()

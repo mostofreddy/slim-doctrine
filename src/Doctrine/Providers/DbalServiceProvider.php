@@ -15,12 +15,13 @@
  * @link      http://www.mostofreddy.com.ar
  */
 namespace Resty\Doctrine\Providers;
-
-use Resty\Api;
-use Resty\Interfaces\ServiceProviderInterface;
+// Resty
+use Resty\AbstractServiceProvider;
+// Doctrine
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Logging\DebugStack;
-
+// Slim
+use Slim\Container;
 /**
  * DbalServiceProvider
  *
@@ -30,39 +31,40 @@ use Doctrine\DBAL\Logging\DebugStack;
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @link      http://www.mostofreddy.com.ar
+ *
+ * @codeCoverageIgnore
  */
-class DbalServiceProvider implements ServiceProviderInterface
+class DbalServiceProvider extends AbstractServiceProvider
 {
     const ERROR_CONFIG_NOT_FOUND = "DBAlonfig: No found";
     const DEFAULT_CONFIG = [
-        'debug' => true
+        'debug' => false,
+        'connection' => []
     ];
     /**
      * Registra el servicio
      *
-     * @param Api $app Instancia de la aplicacion
+     * @param Container $container Instancia de la aplicacion
      *
      * @return void
      */
-    public static function register(Api $app)
+    public static function register(Container $container)
     {
-        $container = $app->getContainer();
-
         $container['db'] = function ($container) {
 
             if (!isset($container['dbal'])) {
                 throw new \Exception(static::ERROR_CONFIG_NOT_FOUND);
             }
 
-            $connectionParams = $container['dbal'] + static::DEFAULT_CONFIG;
+            $configParams = $container['dbal'] + static::DEFAULT_CONFIG;
 
             $config = new Configuration();
 
-            if ($connectionParams['debug'] === true) {
+            if ($configParams['debug'] === true) {
                 $config->setSQLLogger(new DebugStack());
             }
             
-            return \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
+            return \Doctrine\DBAL\DriverManager::getConnection($configParams['connection'], $config);
 
         };
     }

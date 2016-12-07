@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1145b8138703f685b28152c49635b05d",
-    "content-hash": "04c42171de903e8803a81232b7fee0b6",
+    "hash": "9155709b9faa414479055ffb3a1c7c2e",
+    "content-hash": "edfbedfba7875848395181acc5ce5d4e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -654,17 +654,70 @@
             "time": "2016-10-10 12:19:37"
         },
         {
-            "name": "symfony/console",
-            "version": "v3.1.5",
+            "name": "restyphp/slim-service-provider",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/console.git",
-                "reference": "6cb0872fb57b38b3b09ff213c21ed693956b9eb0"
+                "url": "https://github.com/mostofreddy/slim-service-provider.git",
+                "reference": "c71758b3e4742f77515f89b621b8c53803f95227"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6cb0872fb57b38b3b09ff213c21ed693956b9eb0",
-                "reference": "6cb0872fb57b38b3b09ff213c21ed693956b9eb0",
+                "url": "https://api.github.com/repos/mostofreddy/slim-service-provider/zipball/c71758b3e4742f77515f89b621b8c53803f95227",
+                "reference": "c71758b3e4742f77515f89b621b8c53803f95227",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.5.*",
+                "slim/slim": "3.*",
+                "squizlabs/php_codesniffer": "2.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Resty\\": "src/",
+                    "Resty\\Test\\": "tests/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Federico Lozada Mosto",
+                    "email": "mosto.federico@gmail.com",
+                    "homepage": "http://www.mostofreddy.com.ar"
+                }
+            ],
+            "description": "Service Manager para Slim 3",
+            "homepage": "https://github.com/mostofreddy/slim-service-provider",
+            "keywords": [
+                "framework",
+                "microframework",
+                "resty",
+                "restyphp",
+                "service",
+                "service provider",
+                "slim"
+            ],
+            "time": "2016-12-07 09:46:20"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "09d0fd33560e3573185a2ea17614e37ba38716c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/09d0fd33560e3573185a2ea17614e37ba38716c5",
+                "reference": "09d0fd33560e3573185a2ea17614e37ba38716c5",
                 "shasum": ""
             },
             "require": {
@@ -675,17 +728,19 @@
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.8|~3.0",
+                "symfony/filesystem": "~2.8|~3.0",
                 "symfony/process": "~2.8|~3.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": "",
+                "symfony/filesystem": "",
                 "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -712,7 +767,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-28 00:11:12"
+            "time": "2016-11-16 22:18:16"
         },
         {
             "name": "symfony/debug",
@@ -1636,66 +1691,6 @@
             "time": "2016-08-06 14:39:51"
         },
         {
-            "name": "restyphp/resty",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mostofreddy/resty.git",
-                "reference": "cbe195f4b1dc230d83dc1fc952c966dc06ac8e04"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mostofreddy/resty/zipball/cbe195f4b1dc230d83dc1fc952c966dc06ac8e04",
-                "reference": "cbe195f4b1dc230d83dc1fc952c966dc06ac8e04",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0.0",
-                "slim/slim": "^3.0",
-                "symfony/console": "v3.1.5",
-                "symfony/process": "v3.1.5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "5.5.*",
-                "squizlabs/php_codesniffer": "2.7.*"
-            },
-            "suggest": {
-                "monolog/monolog": "Monolog (versión: 1.21.*)",
-                "mostofreddy/loggy": "Logger simple y liviano (versión: dev-master)",
-                "mostofreddy/resty-doctrine": "Service provider para integracion con Doctrine y DBAL (version: 0.1.0)"
-            },
-            "bin": [
-                "resty"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Resty\\": "src/",
-                    "Resty\\Test\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Federico Lozada Mosto",
-                    "email": "mosto.federico@gmail.com",
-                    "homepage": "http://www.mostofreddy.com.ar"
-                }
-            ],
-            "description": "Create beautifull REST APIs",
-            "homepage": "https://github.com/mostofreddy/resty",
-            "keywords": [
-                "api",
-                "framework",
-                "rest",
-                "slim"
-            ],
-            "time": "2016-11-24 20:36:22"
-        },
-        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.0",
             "source": {
@@ -2357,55 +2352,6 @@
             "time": "2016-11-30 04:02:31"
         },
         {
-            "name": "symfony/process",
-            "version": "v3.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/process.git",
-                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/66de154ae86b1a07001da9fbffd620206e4faf94",
-                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Process\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Process Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-09-29 14:13:09"
-        },
-        {
             "name": "symfony/yaml",
             "version": "v3.2.0",
             "source": {
@@ -2513,9 +2459,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "restyphp/resty": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
