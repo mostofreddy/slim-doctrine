@@ -11,4 +11,4 @@ before_script:
 script:
   - php vendor/bin/phpunit
   - php vendor/bin/phpcs --standard=ruleset.xml src/
-  - php vendor/bin/phpcs --standard=ruleset.xml tests/
+  - php vendor/bin/phpcs --standard=ruleset.xml --extensions=php tests/
