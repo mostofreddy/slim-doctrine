@@ -8,15 +8,15 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
  * @category  Resty
- * @package   Resty\Doctrine\Providers
+ * @package   Resty\Slim\Doctrine\Providers
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @link      http://www.mostofreddy.com.ar
  */
-namespace Resty\Doctrine\Providers;
+namespace Resty\Slim\Doctrine\Providers;
 // Resty
-use Resty\AbstractServiceProvider;
+use Resty\Slim\AbstractServiceProvider;
 // Doctrine
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Logging\DebugStack;
@@ -26,7 +26,7 @@ use Slim\Container;
  * DbalServiceProvider
  *
  * @category  Resty
- * @package   Resty\Doctrine\Providers
+ * @package   Resty\Slim\Doctrine\Providers
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)

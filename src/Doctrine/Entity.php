@@ -14,7 +14,7 @@
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @link      http://www.mostofreddy.com.ar
  */
-namespace Resty\Doctrine;
+namespace Resty\Slim\Doctrine;
 
 /**
  * Entity
