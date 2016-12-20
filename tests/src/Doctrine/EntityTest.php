@@ -8,21 +8,21 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
  * @category  Resty
- * @package   Resty\Test\Doctrine
+ * @package   Resty\Slim\Test\Doctrine
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @link      http://www.mostofreddy.com.ar
  */
-namespace Resty\Test\Doctrine;
+namespace Resty\Slim\Test\Doctrine;
 
-use Resty\Doctrine\Entity;
-use Resty\Test\Helpers\EntityDummy;
+use Resty\Slim\Doctrine\Entity;
+use Resty\Slim\Test\Helpers\EntityDummy;
 /**
  * EntityTest
  *
  * @category  Resty
- * @package   Resty\Test\Doctrine
+ * @package   Resty\Slim\Test\Doctrine
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)

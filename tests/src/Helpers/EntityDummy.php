@@ -8,14 +8,14 @@
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
  * @category  Resty
- * @package   Resty\Test\Helpers
+ * @package   Resty\Slim\Test\Helpers
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @link      http://www.mostofreddy.com.ar
  */
-namespace Resty\Test\Helpers;
-use Resty\Doctrine\Entity;
+namespace Resty\Slim\Test\Helpers;
+use Resty\Slim\Doctrine\Entity;
 /**
  * EntityDummy
  *
@@ -25,7 +25,7 @@ use Resty\Doctrine\Entity;
  * For the full copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
  * @category  Resty
- * @package   Resty\Test\Helpers
+ * @package   Resty\Slim\Test\Helpers
  * @author    Federico Lozada Mosto <mosto.federico@gmail.com>
  * @copyright 2016 Federico Lozada Mosto <mosto.federico@gmail.com>
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
