@@ -8,7 +8,7 @@ Service provider para integrar Doctrine y DBAL en proyectos basados en Slim 3.
 Versión estable
 ---------------
 
-0.1.0
+0.2.0
 
 License
 -------
