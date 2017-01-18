@@ -8,7 +8,7 @@ Service provider para integrar Doctrine y DBAL en proyectos basados en Slim 3.
 Versión estable
 ---------------
 
-0.2.0
+0.2.1
 
 License
 -------
@@ -48,7 +48,7 @@ Documentación
 Clase base para entidades de doctrine que permite transformar la entidad en json o array
 
 ```
-use Resty\Doctrine\Entity;
+use Resty\Slim\Doctrine\Entity;
 /**
  * @Entity @Table(name="clients")
  **/
@@ -107,7 +107,7 @@ $config['settings'] = [
     // slim config
 ];
 $config['services'] = [
-    '\Resty\Doctrine\Providers\DbalServiceProvider'
+    '\Resty\Slim\Doctrine\Providers\DbalServiceProvider'
 ];
 $config['dbal'] = [
     'connection' => [
@@ -116,7 +116,7 @@ $config['dbal'] = [
     'debug' => true
 ];
 $api = new App($config);
-$api->add('\Resty\ServiceProviderMiddleware');
+$api->add('\Resty\Slim\ServiceProviderMiddleware');
 
 $api->get('/dbal', function (ServerRequestInterface $request, ResponseInterface $response) {
 
@@ -145,7 +145,7 @@ $config['settings'] = [
     // slim config
 ];
 $config['services'] = [
-    '\Resty\Doctrine\Providers\DbalServiceProvider'
+    '\Resty\Slim\Doctrine\Providers\DbalServiceProvider'
 ];
 $config['doctrine'] = [
     'meta' => [
@@ -160,7 +160,7 @@ $config['doctrine'] = [
     ]
 ];
 $api = new App($config);
-$api->add('\Resty\ServiceProviderMiddleware');
+$api->add('\Resty\Slim\ServiceProviderMiddleware');
 
 $api->get('/doctrine', function (ServerRequestInterface $request, ResponseInterface $response) {
 

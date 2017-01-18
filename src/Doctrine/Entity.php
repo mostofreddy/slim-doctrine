@@ -54,4 +54,21 @@ abstract class Entity implements \JsonSerializable
         }
         return $return;
     }
+
+    /**
+     * Transforma el objeto a array
+     *
+     * @param array $data Array con los valores de la entidad
+     * 
+     * @return Entity
+     */
+    public function fill(array $data):Entity
+    {
+        foreach (get_object_vars($this) as $attrName => $attrValue) {
+            if (isset($data[$attrName])) {
+                $this->$attrName = $data[$attrName];
+            }
+        }
+        return $this;
+    }
 }

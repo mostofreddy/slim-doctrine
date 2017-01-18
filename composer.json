@@ -5,7 +5,7 @@
     "keywords": ["rest", "api", "framework", "slim", "orm", "doctrine", "dbal", "mysql", "database"],
     "homepage": "https://github.com/mostofreddy/resty-doctrine",
     "license": "MIT",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "authors": [
         {
             "name": "Federico Lozada Mosto",
