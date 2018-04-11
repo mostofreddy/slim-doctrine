@@ -1,3 +1,5 @@
+**Deprecated**
+
 Resty-Doctrine
 ==============
 
